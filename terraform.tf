@@ -11,3 +11,4 @@ terraform {
 #az vm image list-publishers -l westus2 -o table
 #az vm image list-offers -l westus2 -p MicrosoftWindowsServer -o table
 #az vm list-sizes -l westus2 -o table
+#git lessons

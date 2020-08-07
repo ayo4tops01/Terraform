@@ -175,7 +175,7 @@ resource "azurerm_lb" "web_server_lb" {
 resource "azurerm_lb_backend_address_pool" "web_server_lb_backend_pool" {
     name                    = "${var.resource_prefix}-lb-backend-pool"
     resource_group_name     = azurerm_resource_group.web_server_rg.name
-    loadbalancer_id         = azurerm_lb.web_server_lb.id
+    loadbalancer_id 534f        = azurerm_lb.web_server_lb.id
 }
 
 resource "azurerm_lb_probe" "web_server_lb_http_probe" {
@@ -197,3 +197,5 @@ resource "azurerm_lb_rule" "web_server_lb_http_rule" {
     probe_id                = azurerm_lb_probe.web_server_lb_http_probe.id
     backend_address_pool_id = azurerm_lb_backend_address_pool.web_server_lb_backend_pool.id
 }
+
+#I love scripting

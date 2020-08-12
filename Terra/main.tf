@@ -19,7 +19,7 @@ resource "azurerm_resource_group" "web_server_rg" {
 }
 
 resource "azurerm_virtual_network" "web_server_vnet" {
-    name                = "${var.resource_prefix}--vnet"
+    name                = "${var.resource_prefix}-vnet"
     location            = var.web_server_location
     resource_group_name = azurerm_resource_group.web_server_rg.name
     address_space       = [var.web_server_address_space]
@@ -50,14 +50,14 @@ resource "azurerm_subnet" "web_server_subnet" {
     }
 } */
 
-resource "azurerm_public_ip" "web_server_lb_public_ip" {
+resource "azurerm_public_ip" "web_server_lb_public_ip"{
     name                = "${var.resource_prefix}-public-ip"
     location            = var.web_server_location
     resource_group_name = azurerm_resource_group.web_server_rg.name
     allocation_method   = var.environment == "production" ? "Static" : "Dynamic"
 }
 
-resource "azurerm_network_security_group" "web_server_nsg" {
+resource "azurerm_network_security_group" "web_server_nsg"{
     name                = "${var.resource_prefix}-nsg"
     location            = var.web_server_location
     resource_group_name = azurerm_resource_group.web_server_rg.name
